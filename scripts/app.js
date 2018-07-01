@@ -287,14 +287,14 @@
     }
   };
 
-  /*
-   * Fake weather data that is presented when the user first uses the app,
-   * or when the user has not saved any cities. See startup code for more
-   * discussion.
-   */
+  // /*
+  //  * Fake weather data that is presented when the user first uses the app,
+  //  * or when the user has not saved any cities. See startup code for more
+  //  * discussion.
+  //  */
   var initialWeatherForecast = {
-    key: '2459115',
-    label: 'New York, NY',
+    key: '12794707',
+    label: 'Tucson, AZ',
     created: '2016-07-22T01:00:00Z',
     channel: {
       astronomy: {
@@ -303,10 +303,10 @@
       },
       item: {
         condition: {
-          text: "Windy",
+          text: "Clear",
           date: "Thu, 21 Jul 2016 09:00 PM EDT",
-          temp: 56,
-          code: 24
+          temp: 156,
+          code: 32
         },
         forecast: [
           {code: 44, high: 86, low: 70},
@@ -319,7 +319,7 @@
         ]
       },
       atmosphere: {
-        humidity: 56
+        humidity: 0
       },
       wind: {
         speed: 25,
