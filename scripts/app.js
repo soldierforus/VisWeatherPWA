@@ -1,17 +1,4 @@
-// Copyright 2016 Google Inc.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
+//Start app, check for selected cities
 
 (function() {
   'use strict';
@@ -27,6 +14,15 @@
     daysOfWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   };
 
+  // const checkCitySelection = function () {
+  //   console.log("Checking cities");
+  //   console.log(app.visibleCards);
+  //   console.log(app.selectedCities);
+  //
+  //   if (app.selectedCities === undefined) {
+  //     alert("Please select a city");
+  //   }
+  // };
 
   /*****************************************************************************
    *
@@ -202,7 +198,8 @@
         }
       } else {
         // Return the initial weather forecast since no data is available.
-        app.updateForecastCard(initialWeatherForecast);
+        // checkCitySelection();
+        // app.updateForecastCard(initialWeatherForecast);
       }
     };
     request.open('GET', url);
@@ -292,41 +289,41 @@
   //  * or when the user has not saved any cities. See startup code for more
   //  * discussion.
   //  */
-  var initialWeatherForecast = {
-    key: '12794707',
-    label: 'Tucson, AZ',
-    created: '2016-07-22T01:00:00Z',
-    channel: {
-      astronomy: {
-        sunrise: "5:43 am",
-        sunset: "8:21 pm"
-      },
-      item: {
-        condition: {
-          text: "Clear",
-          date: "Thu, 21 Jul 2016 09:00 PM EDT",
-          temp: 156,
-          code: 32
-        },
-        forecast: [
-          {code: 44, high: 86, low: 70},
-          {code: 44, high: 94, low: 73},
-          {code: 4, high: 95, low: 78},
-          {code: 24, high: 75, low: 89},
-          {code: 24, high: 89, low: 77},
-          {code: 44, high: 92, low: 79},
-          {code: 44, high: 89, low: 77}
-        ]
-      },
-      atmosphere: {
-        humidity: 0
-      },
-      wind: {
-        speed: 25,
-        direction: 195
-      }
-    }
-  };
+  // var initialWeatherForecast = {
+  //   key: '12794707',
+  //   label: 'Tucson, AZ',
+  //   created: '2016-07-22T01:00:00Z',
+  //   channel: {
+  //     astronomy: {
+  //       sunrise: "5:43 am",
+  //       sunset: "8:21 pm"
+  //     },
+  //     item: {
+  //       condition: {
+  //         text: "Clear",
+  //         date: "Thu, 21 Jul 2016 09:00 PM EDT",
+  //         temp: 156,
+  //         code: 32
+  //       },
+  //       forecast: [
+  //         {code: 44, high: 86, low: 70},
+  //         {code: 44, high: 94, low: 73},
+  //         {code: 4, high: 95, low: 78},
+  //         {code: 24, high: 75, low: 89},
+  //         {code: 24, high: 89, low: 77},
+  //         {code: 44, high: 92, low: 79},
+  //         {code: 44, high: 89, low: 77}
+  //       ]
+  //     },
+  //     atmosphere: {
+  //       humidity: 0
+  //     },
+  //     wind: {
+  //       speed: 25,
+  //       direction: 195
+  //     }
+  //   }
+  // };
 
   /************************************************************************
      *
@@ -345,17 +342,18 @@
       app.selectedCities.forEach(function(city) {
         app.getForecast(city.key, city.label);
       });
-    } else {
+    // } else {
       /* The user is using the app for the first time, or the user has not
        * saved any cities, so show the user some fake data. A real app in this
        * scenario could guess the user's location via IP lookup and then inject
        * that data into the page.
        */
-      app.updateForecastCard(initialWeatherForecast);
-      app.selectedCities = [
-        {key: initialWeatherForecast.key, label: initialWeatherForecast.label}
-      ];
-      app.saveSelectedCities();
+        // checkCitySelection();
+      // app.updateForecastCard(initialWeatherForecast);
+      // app.selectedCities = [
+      //   {key: initialWeatherForecast.key, label: initialWeatherForecast.label}
+      // ];
+    app.saveSelectedCities();
     }
 
     //Service worker
@@ -363,3 +361,45 @@
       navigator.serviceWorker.register('./service-worker.js').then(function() {console.log('Service Worker Registered')});
     }
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Copyright 2016 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.

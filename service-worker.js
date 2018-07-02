@@ -1,6 +1,6 @@
 //Update version iterations as chnges are made
-const cacheName = 'VisWeather-version-9-2';
-const dataCacheName = 'weatherData-version-2-2';
+const cacheName = 'VisWeather-version-9-8';
+const dataCacheName = 'weatherData-version-2-8';
 const filesToCache = [
   '/',
   '/index.html',
